@@ -1,0 +1,68 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/erinbond/Desktop/Ada/week_5/FarMar/lib/far_mar_market.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/erinbond/Desktop/Ada/week_5/FarMar/FarMar.rb": [
+        1,
+        null
+      ],
+      "/Users/erinbond/Desktop/Ada/week_5/FarMar/lib/far_mar_product.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/erinbond/Desktop/Ada/week_5/FarMar/lib/far_mar_sale.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/erinbond/Desktop/Ada/week_5/FarMar/lib/far_mar_vendor.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/erinbond/Desktop/Ada/week_5/FarMar/specs/far_mar_product_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/erinbond/Desktop/Ada/week_5/FarMar/specs/far_mar_sale_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/erinbond/Desktop/Ada/week_5/FarMar/specs/far_mar_vendor_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1473185901
+  }
+}
