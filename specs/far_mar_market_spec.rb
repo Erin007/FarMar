@@ -1,5 +1,6 @@
 require_relative "Spec_helper"
-require_relative "../lib/far_mar_market"
+# require_relative "../lib/far_mar_market"
+require_relative "../FarMar"
 
 describe "Testing FarMar Market" do
 
