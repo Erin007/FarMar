@@ -82,4 +82,5 @@ end
 
  vendor = FarMar::Vendor.new({:id => 2655, :name =>"Glover-Hills",:num_employees => 11,:market_id => 493 })
 # ap vendor
- ap vendor.sales
+#ap vendor.products
+ap vendor.sales

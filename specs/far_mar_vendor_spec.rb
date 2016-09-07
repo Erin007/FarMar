@@ -32,4 +32,15 @@ describe "Testing FarMar Vendor" do
     expect(vendor.market.id).must_equal(493)
   end
 
+  it ".products returns the products that vendor sells" do
+  #[0] #<FarMar::Product:0x007fe4623624e8 @id=8085, @name="Pleasant Pretzel", @vendor_id=2655>,
+  #[1] #<FarMar::Product:0x007fe462362498 @id=8086, @name="Calm Burrito", @vendor_id=2655>
+    expect(vendor.products.length).must_equal(2)
+    expect(vendor.products.sample.vendor_id).must_equal(2655)
+  end
+
+  it ".sales returns the sales that vendor completed" do
+    expect(vendor.sales.sample.vendor_id).must_equal(2655)
+  end
+
 end
