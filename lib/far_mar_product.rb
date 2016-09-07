@@ -27,6 +27,7 @@ class FarMar::Product
   end
 #self.all: returns a collection of instances, representing all of the objects described in the CSV
   def self.all
+    self.create_products_from_csv
     return @products
   end
 #self.find(id): returns an instance of the object where the value of the id field in the CSV matches the passed parameter.

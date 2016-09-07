@@ -11,7 +11,7 @@ class FarMar::Vendor
     @name = vendor_hash[:name]
     @num_employees = vendor_hash[:num_employees]
     @market_id = vendor_hash[:market_id]
-    # @vendors = []
+    
   end
 
   def self.create_vendors_from_csv

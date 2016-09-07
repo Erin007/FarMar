@@ -14,7 +14,7 @@ class FarMar::Market
     @county = market_hash[:county]
     @state = market_hash[:state]
     @zip = market_hash[:zip]
-    # @markets = []
+
   end
 
   def self.create_markets_from_csv
@@ -35,6 +35,7 @@ class FarMar::Market
 
 #self.all: returns a collection of instances, representing all of the objects described in the CSV
   def self.all
+    self.create_markets_from_csv
     return @markets
   end
 
