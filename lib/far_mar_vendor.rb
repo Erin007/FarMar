@@ -53,8 +53,20 @@ def market
   return market_where_this_vendor_sells
 end#of method
 
+#products: returns a collection of FarMar::Product instances that are associated by the FarMar::Product vendor_id field.
+def products
+  products_this_vendor_sells = []
+  products_to_check = FarMar::Product.all
+  products_to_check.each do |product_to_check|
+    if self.id == product_to_check.vendor_id
+        products_this_vendor_sells << product_to_check
+      end#of if
+    end#of do
+  return products_this_vendor_sells
+end#of method
+
 end
 
-# vendor = FarMar::Vendor.new({:id => 2655, :name =>"Glover-Hills",:num_employees => 11,:market_id => 493 })
+ vendor = FarMar::Vendor.new({:id => 2655, :name =>"Glover-Hills",:num_employees => 11,:market_id => 493 })
 # ap vendor
-# ap vendor.market
+ ap vendor.products

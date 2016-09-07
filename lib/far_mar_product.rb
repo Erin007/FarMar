@@ -11,7 +11,6 @@ class FarMar::Product
     @id = product_hash[:id]
     @name = product_hash[:name]
     @vendor_id = product_hash[:vendor_id]
-    @products = []
   end
 
   def self.create_products_from_csv
