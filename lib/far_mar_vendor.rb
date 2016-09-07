@@ -11,7 +11,7 @@ class FarMar::Vendor
     @name = vendor_hash[:name]
     @num_employees = vendor_hash[:num_employees]
     @market_id = vendor_hash[:market_id]
-    @vendors = []
+    # @vendors = []
   end
 
   def self.create_vendors_from_csv
@@ -29,6 +29,7 @@ class FarMar::Vendor
 
 #self.all: returns a collection of instances, representing all of the objects described in the CSV
   def self.all
+    self.create_vendors_from_csv
     return @vendors
   end
 
@@ -42,3 +43,5 @@ class FarMar::Vendor
   end
 
 end
+
+# ap FarMar::Vendor.create_vendors_from_csv

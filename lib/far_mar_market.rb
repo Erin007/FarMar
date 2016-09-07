@@ -14,7 +14,7 @@ class FarMar::Market
     @county = market_hash[:county]
     @state = market_hash[:state]
     @zip = market_hash[:zip]
-    @markets = []
+    # @markets = []
   end
 
   def self.create_markets_from_csv
@@ -46,4 +46,29 @@ class FarMar::Market
       end
     end
   end
+
+#vendors: returns a collection of FarMar::Vendor instances that are associated with the market by the market_id field.
+  def vendors
+    vendors_at_this_market = []
+    vendors = FarMar::Vendor.all
+    vendors.each do |vendor|
+      if vendor.market_id == self.id
+        vendors_at_this_market << vendor
+        end#of if
+      end#of do
+    return vendors_at_this_market
+  end#of method
+
+
 end#of class
+
+ap market = FarMar::Market.new({
+       :id => 493,
+     :name => "Woodstock Farmers Market",
+  :address => "1102 McConnell Road",
+     :city => "woodstock",
+   :county => "McHenry",
+    :state => "Illinois",
+      :zip => "60098"
+})
+ap market.vendors
