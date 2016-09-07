@@ -1,7 +1,7 @@
-require_relative "../FarMar"
-require_relative "far_mar_product"
-require_relative "far_mar_sale"
-require_relative "far_mar_vendor"
+# require_relative "../FarMar"
+# require_relative "far_mar_product"
+# require_relative "far_mar_sale"
+# require_relative "far_mar_vendor"
 
 class FarMar::Market
   attr_accessor :id, :name, :address, :city, :county, :state, :zip, :market_hash, :markets
@@ -67,13 +67,13 @@ end#of class
 # ap FarMar::Market.find(67)
 
 
-ap market = FarMar::Market.new({
-       :id => 493,
-     :name => "Woodstock Farmers Market",
-  :address => "1102 McConnell Road",
-     :city => "woodstock",
-   :county => "McHenry",
-    :state => "Illinois",
-      :zip => "60098"
-})
-ap market.vendors
+# ap market = FarMar::Market.new({
+#        :id => 493,
+#      :name => "Woodstock Farmers Market",
+#   :address => "1102 McConnell Road",
+#      :city => "woodstock",
+#    :county => "McHenry",
+#     :state => "Illinois",
+#       :zip => "60098"
+# })
+# ap market.vendors

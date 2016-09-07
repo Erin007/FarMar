@@ -1,7 +1,7 @@
-require_relative "../FarMar"
-require_relative "far_mar_product"
-require_relative "far_mar_sale"
-require_relative "far_mar_market"
+# require_relative "../FarMar"
+# require_relative "far_mar_product"
+# require_relative "far_mar_sale"
+# require_relative "far_mar_market"
 
 class FarMar::Vendor
   attr_accessor :id, :name, :num_employees, :market_id, :vendors, :vendor_hash
@@ -11,7 +11,7 @@ class FarMar::Vendor
     @name = vendor_hash[:name]
     @num_employees = vendor_hash[:num_employees]
     @market_id = vendor_hash[:market_id]
-    
+
   end
 
   def self.create_vendors_from_csv
@@ -41,7 +41,21 @@ class FarMar::Vendor
       end
     end
   end
+#market: returns the FarMar::Market instance that is associated with this vendor using the FarMar::Vendor market_id field
+def market
+  market_where_this_vendor_sells = nil
+  markets_to_check = FarMar::Market.all
+  markets_to_check.each do |market_to_check|
+    if self.market_id == market_to_check.id
+      market_where_this_vendor_sells = market_to_check
+      end#of if
+    end#of do
+  return market_where_this_vendor_sells
+end#of method
 
 end
 
-# ap FarMar::Vendor.create_vendors_from_csv
+vendor = FarMar::Vendor.new({:id => 2655, :name =>"Glover-Hills",:num_employees => 11,:market_id => 493 })
+ap vendor
+
+ap vendor.market
