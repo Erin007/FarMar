@@ -43,4 +43,8 @@ describe "Testing FarMar Vendor" do
     expect(vendor.sales.sample.vendor_id).must_equal(2655)
   end
 
+  it ".revenue returns the sum amount (in cents) for the sales that vendor completed" do
+    expect(vendor.revenue).must_equal(72454)
+  end
+
 end
