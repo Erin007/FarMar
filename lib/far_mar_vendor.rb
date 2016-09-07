@@ -1,6 +1,6 @@
 # require_relative "../FarMar"
 # require_relative "far_mar_product"
-# require_relative "far_mar_sale"
+require_relative "far_mar_sale"
 # require_relative "far_mar_market"
 
 class FarMar::Vendor
@@ -65,8 +65,21 @@ def products
   return products_this_vendor_sells
 end#of method
 
+#sales: returns a collection of FarMar::Sale instances that are associated by the vendor_id field.
+def sales
+  sales_this_vendor_made = []
+  sales_to_check = FarMar::Sale.all
+  sales_to_check.each do |sale_to_check|
+    if self.id == sale_to_check.vendor_id
+        sales_this_vendor_made << sale_to_check
+      end#of if
+    end#of do
+  return sales_this_vendor_made
+end#of method
+
+
 end
 
  vendor = FarMar::Vendor.new({:id => 2655, :name =>"Glover-Hills",:num_employees => 11,:market_id => 493 })
 # ap vendor
- ap vendor.products
+ ap vendor.sales
