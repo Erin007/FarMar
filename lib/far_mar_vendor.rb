@@ -77,10 +77,17 @@ def sales
   return sales_this_vendor_made
 end#of method
 
-
+#revenue: returns the the sum of all of the vendor's sales (in cents)
+  def revenue
+    revenue_amount = 0
+    sales.each do |sale|
+    revenue_amount += sale.amount
+      end
+    return revenue_amount
+  end
 end
 
  vendor = FarMar::Vendor.new({:id => 2655, :name =>"Glover-Hills",:num_employees => 11,:market_id => 493 })
 # ap vendor
 #ap vendor.products
-ap vendor.sales
+ap vendor.revenue
