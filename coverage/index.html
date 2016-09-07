@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-09-07T13:51:40-07:00">2016-09-07T13:51:40-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-09-07T14:28:29-07:00">2016-09-07T14:28:29-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         6050.33
+         6169.99
        </span>
     </span> hits/line)
   </h2>
@@ -63,11 +63,11 @@
       <tr>
         <td class="strong"><a href="#3e11fa96f263b1437eba8e7c2e70a322503eb8aa" class="src_link" title="lib/far_mar_market.rb">lib/far_mar_market.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>75</td>
+        <td>79</td>
         <td>37</td>
         <td>37</td>
         <td>0</td>
-        <td>806.1</td>
+        <td>467.0</td>
       </tr>
       
       <tr>
@@ -97,7 +97,7 @@
         <td>25</td>
         <td>25</td>
         <td>0</td>
-        <td>4627.4</td>
+        <td>5919.0</td>
       </tr>
       
       <tr>
@@ -292,44 +292,44 @@
           <code class="ruby">  def initialize(market_hash)</code>
         </li>
       
-        <li class="covered" data-hits="3002" data-linenumber="10">
-          <span class="hits">3002</span>
+        <li class="covered" data-hits="1003" data-linenumber="10">
+          <span class="hits">1003</span>
           
           <code class="ruby">    @id = market_hash[:id]</code>
         </li>
       
-        <li class="covered" data-hits="3002" data-linenumber="11">
-          <span class="hits">3002</span>
+        <li class="covered" data-hits="1003" data-linenumber="11">
+          <span class="hits">1003</span>
           
           <code class="ruby">    @name = market_hash[:name]</code>
         </li>
       
-        <li class="covered" data-hits="3002" data-linenumber="12">
-          <span class="hits">3002</span>
+        <li class="covered" data-hits="1003" data-linenumber="12">
+          <span class="hits">1003</span>
           
           <code class="ruby">    @address = market_hash[:address]</code>
         </li>
       
-        <li class="covered" data-hits="3002" data-linenumber="13">
-          <span class="hits">3002</span>
+        <li class="covered" data-hits="1003" data-linenumber="13">
+          <span class="hits">1003</span>
           
           <code class="ruby">    @city = market_hash[:city]</code>
         </li>
       
-        <li class="covered" data-hits="3002" data-linenumber="14">
-          <span class="hits">3002</span>
+        <li class="covered" data-hits="1003" data-linenumber="14">
+          <span class="hits">1003</span>
           
           <code class="ruby">    @county = market_hash[:county]</code>
         </li>
       
-        <li class="covered" data-hits="3002" data-linenumber="15">
-          <span class="hits">3002</span>
+        <li class="covered" data-hits="1003" data-linenumber="15">
+          <span class="hits">1003</span>
           
           <code class="ruby">    @state = market_hash[:state]</code>
         </li>
       
-        <li class="covered" data-hits="3002" data-linenumber="16">
-          <span class="hits">3002</span>
+        <li class="covered" data-hits="1003" data-linenumber="16">
+          <span class="hits">1003</span>
           
           <code class="ruby">    @zip = market_hash[:zip]</code>
         </li>
@@ -358,26 +358,26 @@
           <code class="ruby">  def self.create_markets_from_csv</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="21">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="2" data-linenumber="21">
+          <span class="hits">2</span>
           
           <code class="ruby">    market_hash = {}</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="22">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
           
           <code class="ruby">    @markets = []</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="23">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="2" data-linenumber="23">
+          <span class="hits">2</span>
           
           <code class="ruby">    CSV.read(&quot;/Users/erinbond/desktop/ada/week_5/FarMar/support/markets.csv&quot;, &#39;r&#39;).each do |row|</code>
         </li>
       
-        <li class="covered" data-hits="3000" data-linenumber="24">
-          <span class="hits">3000</span>
+        <li class="covered" data-hits="1000" data-linenumber="24">
+          <span class="hits">1000</span>
           
           <code class="ruby">      market_hash = {:id =&gt;row[0].to_i,</code>
         </li>
@@ -418,8 +418,8 @@
           <code class="ruby">                    :zip =&gt;row[6]}</code>
         </li>
       
-        <li class="covered" data-hits="3000" data-linenumber="31">
-          <span class="hits">3000</span>
+        <li class="covered" data-hits="1000" data-linenumber="31">
+          <span class="hits">1000</span>
           
           <code class="ruby">      @markets &lt;&lt; FarMar::Market.new(market_hash)</code>
         </li>
@@ -430,8 +430,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="33">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="2" data-linenumber="33">
+          <span class="hits">2</span>
           
           <code class="ruby">    return @markets</code>
         </li>
@@ -460,14 +460,14 @@
           <code class="ruby">  def self.all</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="38">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="2" data-linenumber="38">
+          <span class="hits">2</span>
           
           <code class="ruby">    self.create_markets_from_csv</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="39">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="2" data-linenumber="39">
+          <span class="hits">2</span>
           
           <code class="ruby">    return @markets</code>
         </li>
@@ -496,20 +496,20 @@
           <code class="ruby">  def self.find(id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="44">
+          <span class="hits">2</span>
           
           <code class="ruby">    @markets.each do |market|</code>
         </li>
       
-        <li class="covered" data-hits="67" data-linenumber="45">
-          <span class="hits">67</span>
+        <li class="covered" data-hits="134" data-linenumber="45">
+          <span class="hits">134</span>
           
           <code class="ruby">      if market.id == id</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="46">
+          <span class="hits">2</span>
           
           <code class="ruby">        return market</code>
         </li>
@@ -550,32 +550,32 @@
           <code class="ruby">  def vendors</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="53">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="53">
+          <span class="hits">3</span>
           
           <code class="ruby">    vendors_at_this_market = []</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="54">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="54">
+          <span class="hits">3</span>
           
           <code class="ruby">    vendors = FarMar::Vendor.all</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="55">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="55">
+          <span class="hits">3</span>
           
           <code class="ruby">    vendors.each do |vendor|</code>
         </li>
       
-        <li class="covered" data-hits="2690" data-linenumber="56">
-          <span class="hits">2690</span>
+        <li class="covered" data-hits="8070" data-linenumber="56">
+          <span class="hits">8070</span>
           
           <code class="ruby">      if vendor.market_id == self.id</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="57">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="12" data-linenumber="57">
+          <span class="hits">12</span>
           
           <code class="ruby">        vendors_at_this_market &lt;&lt; vendor</code>
         </li>
@@ -592,8 +592,8 @@
           <code class="ruby">      end#of do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="60">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="60">
+          <span class="hits">3</span>
           
           <code class="ruby">    return vendors_at_this_market</code>
         </li>
@@ -625,64 +625,88 @@
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="66">
           
-          <code class="ruby">ap market = FarMar::Market.new({</code>
+          
+          <code class="ruby"># FarMar::Market.all</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="67">
           
           
-          <code class="ruby">       :id =&gt; 493,</code>
+          <code class="ruby"># ap FarMar::Market.find(67)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="68">
           
           
-          <code class="ruby">     :name =&gt; &quot;Woodstock Farmers Market&quot;,</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="69">
           
           
-          <code class="ruby">  :address =&gt; &quot;1102 McConnell Road&quot;,</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">     :city =&gt; &quot;woodstock&quot;,</code>
+          <code class="ruby">ap market = FarMar::Market.new({</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby">   :county =&gt; &quot;McHenry&quot;,</code>
+          <code class="ruby">       :id =&gt; 493,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="72">
           
           
-          <code class="ruby">    :state =&gt; &quot;Illinois&quot;,</code>
+          <code class="ruby">     :name =&gt; &quot;Woodstock Farmers Market&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby">      :zip =&gt; &quot;60098&quot;</code>
+          <code class="ruby">  :address =&gt; &quot;1102 McConnell Road&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
           
           
+          <code class="ruby">     :city =&gt; &quot;woodstock&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">   :county =&gt; &quot;McHenry&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby">    :state =&gt; &quot;Illinois&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby">      :zip =&gt; &quot;60098&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
           <code class="ruby">})</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="75">
+        <li class="covered" data-hits="1" data-linenumber="79">
           <span class="hits">1</span>
           
           <code class="ruby">ap market.vendors</code>
@@ -1324,26 +1348,26 @@
           <code class="ruby">  def initialize(vendor_hash)</code>
         </li>
       
-        <li class="covered" data-hits="18831" data-linenumber="10">
-          <span class="hits">18831</span>
+        <li class="covered" data-hits="24211" data-linenumber="10">
+          <span class="hits">24211</span>
           
           <code class="ruby">    @id = vendor_hash[:id]</code>
         </li>
       
-        <li class="covered" data-hits="18831" data-linenumber="11">
-          <span class="hits">18831</span>
+        <li class="covered" data-hits="24211" data-linenumber="11">
+          <span class="hits">24211</span>
           
           <code class="ruby">    @name = vendor_hash[:name]</code>
         </li>
       
-        <li class="covered" data-hits="18831" data-linenumber="12">
-          <span class="hits">18831</span>
+        <li class="covered" data-hits="24211" data-linenumber="12">
+          <span class="hits">24211</span>
           
           <code class="ruby">    @num_employees = vendor_hash[:num_employees]</code>
         </li>
       
-        <li class="covered" data-hits="18831" data-linenumber="13">
-          <span class="hits">18831</span>
+        <li class="covered" data-hits="24211" data-linenumber="13">
+          <span class="hits">24211</span>
           
           <code class="ruby">    @market_id = vendor_hash[:market_id]</code>
         </li>
@@ -1372,26 +1396,26 @@
           <code class="ruby">  def self.create_vendors_from_csv</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="18">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="9" data-linenumber="18">
+          <span class="hits">9</span>
           
           <code class="ruby">    vendor_hash = {}</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="19">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="9" data-linenumber="19">
+          <span class="hits">9</span>
           
           <code class="ruby">    @vendors = []</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="20">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="9" data-linenumber="20">
+          <span class="hits">9</span>
           
           <code class="ruby">    CSV.read(&quot;/Users/erinbond/desktop/ada/week_5/FarMar/support/vendors.csv&quot;, &#39;r&#39;).each do |row|</code>
         </li>
       
-        <li class="covered" data-hits="18830" data-linenumber="21">
-          <span class="hits">18830</span>
+        <li class="covered" data-hits="24210" data-linenumber="21">
+          <span class="hits">24210</span>
           
           <code class="ruby">      vendor_hash = {:id =&gt;row[0].to_i,</code>
         </li>
@@ -1414,8 +1438,8 @@
           <code class="ruby">                    :market_id =&gt;row[3].to_i}</code>
         </li>
       
-        <li class="covered" data-hits="18830" data-linenumber="25">
-          <span class="hits">18830</span>
+        <li class="covered" data-hits="24210" data-linenumber="25">
+          <span class="hits">24210</span>
           
           <code class="ruby">      @vendors &lt;&lt; FarMar::Vendor.new(vendor_hash)</code>
         </li>
@@ -1426,8 +1450,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="27">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="9" data-linenumber="27">
+          <span class="hits">9</span>
           
           <code class="ruby">    return @vendors</code>
         </li>
@@ -1456,14 +1480,14 @@
           <code class="ruby">  def self.all</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="32">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="32">
+          <span class="hits">7</span>
           
           <code class="ruby">    self.create_vendors_from_csv</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="33">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="33">
+          <span class="hits">7</span>
           
           <code class="ruby">    return @vendors</code>
         </li>

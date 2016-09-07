@@ -62,6 +62,10 @@ class FarMar::Market
 
 
 end#of class
+#
+# FarMar::Market.all
+# ap FarMar::Market.find(67)
+
 
 ap market = FarMar::Market.new({
        :id => 493,
