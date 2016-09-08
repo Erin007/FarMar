@@ -86,6 +86,15 @@ class FarMar::Market
   end
 
 #prefered_vendor(date): returns the vendor with the highest revenue for the given date
+#"2013-11-13 05:05:00 -0800"
+  def prefered_vendor(date)
+    vendor_daily_revenue = Hash.new(0)
+
+    FarMar::Sale.between("#{date} 00:00:00 -800", "#{date} 24:00:00 -800").each do |sale|
+            vendor_daily_revenue[sale.vendor_id]+= sale.amount
+          end
+    return FarMar::Vendor.find(vendor_daily_revenue.key(vendor_daily_revenue.values.max))
+  end
 
 #worst_vendor: returns the vendor with the lowest revenue
   def worst_vendor
@@ -101,6 +110,14 @@ class FarMar::Market
   end
 
 #worst_vendor(date): returns the vendor with the lowest revenue on the given date
+  def worst_vendor(date)
+    vendor_daily_revenue = Hash.new(0)
+
+    FarMar::Sale.between("#{date} 00:00:00 -800", "#{date} 24:00:00 -800").each do |sale|
+            vendor_daily_revenue[sale.vendor_id]+= sale.amount
+          end
+    return FarMar::Vendor.find(vendor_daily_revenue.key(vendor_daily_revenue.values.min))
+  end
 
 end#of class
 
@@ -108,13 +125,15 @@ end#of class
 # FarMar::Market.all
 # ap FarMar::Market.find(67)
 
-#  market = FarMar::Market.new({
-#        :id => 493,
-#      :name => "Woodstock Farmers Market",
-#   :address => "1102 McConnell Road",
-#      :city => "woodstock",
-#    :county => "McHenry",
-#     :state => "Illinois",
-#       :zip => "60098"
-# })
-#  ap market.products
+ market = FarMar::Market.new({
+       :id => 493,
+     :name => "Woodstock Farmers Market",
+  :address => "1102 McConnell Road",
+     :city => "woodstock",
+   :county => "McHenry",
+    :state => "Illinois",
+      :zip => "60098"
+})
+
+# ap  market.prefered_vendor("2013-11-13")
+# ap market.worst_vendor("2013-11-13")
