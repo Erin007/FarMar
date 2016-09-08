@@ -51,4 +51,17 @@ describe "Testing FarMar Market" do
     #<FarMar::Vendor:0x007ffd1103e498 @id=2658, @name="Becker Inc", @num_employees=10, @market_id=493>
   end
 
+  it ".products returns a collection of product objects that are associated with this market" do
+    expect(market.products.class).must_equal(Array)
+    expect(market.products.sample.class).must_equal(FarMar::Product)
+    expect(market.products.length).must_equal(8)
+  # [0] #<FarMar::Product:0x007ffdd9087d78 @id=8085, @name="Pleasant Pretzel", @vendor_id=2655>,
+  # [1] #<FarMar::Product:0x007ffdd9087c88 @id=8086, @name="Calm Burrito", @vendor_id=2655>,
+  # [2] #<FarMar::Product:0x007ffdd99ec698 @id=8087, @name="Hollow Fish", @vendor_id=2656>,
+  # [3] #<FarMar::Product:0x007ffdd99ec5f8 @id=8088, @name="Dry Mushrooms", @vendor_id=2656>,
+  # [4] #<FarMar::Product:0x007ffdd99ec5a8 @id=8089, @name="Gigantic Mushrooms", @vendor_id=2656>,
+  # [5] #<FarMar::Product:0x007ffdda15c158 @id=8090, @name="Sour Beets", @vendor_id=2657>,
+  # [6] #<FarMar::Product:0x007ffdda15c0e0 @id=8091, @name="Immense Beef", @vendor_id=2657>,
+  # [7] #<FarMar::Product:0x007ffdd8b2f948 @id=8092, @name="Salty Apples", @vendor_id=2658>
+  end 
 end
