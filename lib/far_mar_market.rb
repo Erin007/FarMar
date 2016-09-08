@@ -41,6 +41,7 @@ class FarMar::Market
 
 #self.find(id): returns an instance of the object where the value of the id field in the CSV matches the passed parameter.
   def self.find(id)
+    self.all
     @markets.each do |market|
       if market.id == id
         return market

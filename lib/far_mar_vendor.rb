@@ -35,6 +35,7 @@ class FarMar::Vendor
 
 #self.find(id): returns an instance of the object where the value of the id field in the CSV matches the passed parameter.
   def self.find(id)
+    self.all
     @vendors.each do |vendor|
       if vendor.id == id
         return vendor

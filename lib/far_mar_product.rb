@@ -31,6 +31,7 @@ class FarMar::Product
   end
 #self.find(id): returns an instance of the object where the value of the id field in the CSV matches the passed parameter.
   def self.find(id)
+    self.all
     @products.each do |product|
       if product.id == id
         return product
@@ -80,8 +81,8 @@ class FarMar::Product
 
 end#of class
 
-FarMar::Product.all 
-ap FarMar::Product.by_vendor(2612)
+# FarMar::Product.all
+# ap FarMar::Product.by_vendor(2612)
 
 
 

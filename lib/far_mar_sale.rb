@@ -36,6 +36,7 @@ class FarMar::Sale
   end
 #self.find(id): returns an instance of the object where the value of the id field in the CSV matches the passed parameter.
   def self.find(id)
+    self.all
     @sales.each do |sale|
       if sale.id == id
         return sale
@@ -43,4 +44,23 @@ class FarMar::Sale
     end
   end
 
+#vendor: returns the FarMar::Vendor instance that is associated with this sale using the FarMar::Sale vendor_id field
+  def vendor
+    vendor_that_made_this_sale = nil
+    vendors = FarMar::Vendor.all
+    vendors.each do |vendor|
+      if vendor.id == self.vendor_id
+        vendor_that_made_this_sale = vendor
+        return vendor_that_made_this_sale
+      end#of if
+      end#of do
+  end#of method
+
+#product: returns the FarMar::Product instance that is associated with this sale using the FarMar::Sale product_id field
+
+#self.between(beginning_time, end_time): returns a collection of FarMar::Sale objects where the purchase time is between the two times given as arguments
+
 end
+
+FarMar::Sale.all
+ap FarMar::Sale.find(12)
