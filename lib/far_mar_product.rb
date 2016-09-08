@@ -80,6 +80,9 @@ class FarMar::Product
 
 end#of class
 
+FarMar::Product.all 
+ap FarMar::Product.by_vendor(2612)
+
 
 
 #[7961] #<FarMar::Product:0x007f8d5c164360 @id=7962, @name="Kickin' Carrots", @vendor_id=2612>,

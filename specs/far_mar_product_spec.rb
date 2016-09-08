@@ -50,10 +50,12 @@ describe "Testing FarMar Product" do
       expect(product.number_of_sales).must_equal(4)
     end
 
-    it "self.by_vendor returns all of the vendors with the given product_id" do
+    it "self.by_vendor returns all of the products with the given vendor_id" do
       products
       expect(FarMar::Product.by_vendor(2612).class).must_equal(Array)
       expect(FarMar::Product.by_vendor(2612)[0].class).must_equal(FarMar::Product)
+      expect(FarMar::Product.by_vendor(2612).length).must_equal(2)
+      expect(FarMar::Product.by_vendor(2612).sample.vendor_id).must_equal(2612)
     end
 
 
