@@ -80,14 +80,15 @@ class FarMar::Sale
       return sales_in_time_window
   end
 
-  def self.purchase_times
-    self.all
-    purchase_times = []
-    @sales.each do |sale|
-      purchase_times << sale.purchase_time
-      end
-    return purchase_times.sort
-  end
+#I used this to see all of the purchase times in a tidy list so I could troubleshoot the self.between method
+  # def self.purchase_times
+  #   self.all
+  #   purchase_times = []
+  #   @sales.each do |sale|
+  #     purchase_times << sale.purchase_time
+  #     end
+  #   return purchase_times.sort
+  # end
 
 #<FarMar::Sale:0x007fc4bb4b4da8 @id=12, @amount=5179, @purchase_time="2013-11-08 16:36:03 -0800", @vendor_id=3, @product_id=4>
 

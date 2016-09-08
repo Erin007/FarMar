@@ -1,7 +1,7 @@
 # require_relative "../FarMar"
-# require_relative "far_mar_product"
+require_relative "far_mar_product"
 # require_relative "far_mar_sale"
-# require_relative "far_mar_vendor"
+require_relative "far_mar_vendor"
 
 class FarMar::Market
   attr_accessor :id, :name, :address, :city, :county, :state, :zip, :market_hash, :markets
@@ -61,20 +61,40 @@ class FarMar::Market
     return vendors_at_this_market
   end#of method
 
+#products returns a collection of FarMar::Product instances that are associated to the market through the FarMar::Vendor class.
+  def products
+    products_from_this_market = []
+    vendors.each do |vendor|
+      products_from_this_market << vendor.products
+    end
+    return products_from_this_market.flatten
+  end
+
+#self.search(search_term) returns a collection of FarMar::Market instances where the market name or vendor name contain the search_term. For example FarMar::Market.search('school') would return 3 results, one being the market with id 75 (Fox School Farmers FarMar::Market).
+
+#prefered_vendor: returns the vendor with the highest revenue
+
+#prefered_vendor(date): returns the vendor with the highest revenue for the given date
+
+#worst_vendor: returns the vendor with the lowest revenue
+
+#worst_vendor(date): returns the vendor with the lowest revenue on the given date
 
 end#of class
-#
+
+
+
 # FarMar::Market.all
 # ap FarMar::Market.find(67)
 
 
-# ap market = FarMar::Market.new({
-#        :id => 493,
-#      :name => "Woodstock Farmers Market",
-#   :address => "1102 McConnell Road",
-#      :city => "woodstock",
-#    :county => "McHenry",
-#     :state => "Illinois",
-#       :zip => "60098"
-# })
-# ap market.vendors
+ market = FarMar::Market.new({
+       :id => 493,
+     :name => "Woodstock Farmers Market",
+  :address => "1102 McConnell Road",
+     :city => "woodstock",
+   :county => "McHenry",
+    :state => "Illinois",
+      :zip => "60098"
+})
+ ap market.products

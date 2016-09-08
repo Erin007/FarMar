@@ -79,6 +79,9 @@ class FarMar::Product
     return products_with_this_vendor_id
   end
 
+#self.most_revenue(n) returns the top n product instances ranked by total revenue
+
+
 end#of class
 
 # FarMar::Product.all
