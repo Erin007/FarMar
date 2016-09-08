@@ -9,6 +9,16 @@ describe "Testing FarMar Vendor" do
 
   let(:vendors) { FarMar::Vendor.all }
 
+  let(:market) { FarMar::Market.new({
+         :id => 493,
+       :name => "Woodstock Farmers Market",
+    :address => "1102 McConnell Road",
+       :city => "woodstock",
+     :county => "McHenry",
+      :state => "Illinois",
+        :zip => "60098"
+                          }) }
+
   it "Confirm that new Vendor objects can be created" do
     expect(vendor.class).must_equal(FarMar::Vendor)
   end
@@ -45,6 +55,13 @@ describe "Testing FarMar Vendor" do
 
   it ".revenue returns the sum amount (in cents) for the sales that vendor completed" do
     expect(vendor.revenue).must_equal(72454)
+  end
+
+  it "self.by_market returns all of the vendors with the given market_id" do
+    vendors
+    expect(FarMar::Vendor.by_market(493).class).must_equal(Array)
+    expect(FarMar::Vendor.by_market(493)[0].class).must_equal(FarMar::Vendor)
+    #expect(FarMar::Vendor.by_market(493)).must_equal(market.vendors)
   end
 
 end

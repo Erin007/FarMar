@@ -37,9 +37,9 @@ class FarMar::Vendor
   def self.find(id)
     @vendors.each do |vendor|
       if vendor.id == id
+        return vendor
         end
       end
-    return vendor
   end
 #market: returns the FarMar::Market instance that is associated with this vendor using the FarMar::Vendor market_id field
 def market
