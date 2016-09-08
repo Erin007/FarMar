@@ -73,6 +73,17 @@ class FarMar::Market
 #self.search(search_term) returns a collection of FarMar::Market instances where the market name or vendor name contain the search_term. For example FarMar::Market.search('school') would return 3 results, one being the market with id 75 (Fox School Farmers FarMar::Market).
 
 #prefered_vendor: returns the vendor with the highest revenue
+  def prefered_vendor
+    prefered_vendor = nil
+    revenues = []
+    vendors.each do |vendor|
+      revenues << vendor.revenue
+        if vendor.revenue == revenues.max
+          prefered_vendor = vendor
+        end
+      end
+      return prefered_vendor
+    end
 
 #prefered_vendor(date): returns the vendor with the highest revenue for the given date
 
@@ -83,18 +94,16 @@ class FarMar::Market
 end#of class
 
 
-
 # FarMar::Market.all
 # ap FarMar::Market.find(67)
 
-
- market = FarMar::Market.new({
-       :id => 493,
-     :name => "Woodstock Farmers Market",
-  :address => "1102 McConnell Road",
-     :city => "woodstock",
-   :county => "McHenry",
-    :state => "Illinois",
-      :zip => "60098"
-})
- ap market.products
+#  market = FarMar::Market.new({
+#        :id => 493,
+#      :name => "Woodstock Farmers Market",
+#   :address => "1102 McConnell Road",
+#      :city => "woodstock",
+#    :county => "McHenry",
+#     :state => "Illinois",
+#       :zip => "60098"
+# })
+#  ap market.products

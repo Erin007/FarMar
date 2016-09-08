@@ -63,5 +63,13 @@ describe "Testing FarMar Market" do
   # [5] #<FarMar::Product:0x007ffdda15c158 @id=8090, @name="Sour Beets", @vendor_id=2657>,
   # [6] #<FarMar::Product:0x007ffdda15c0e0 @id=8091, @name="Immense Beef", @vendor_id=2657>,
   # [7] #<FarMar::Product:0x007ffdd8b2f948 @id=8092, @name="Salty Apples", @vendor_id=2658>
-  end 
+  end
+
+  it ".prefered_vendor returns the vendor with the highest revenue at this market" do
+    #does it return a vendor?
+    expect(market.prefered_vendor.class).must_equal(FarMar::Vendor)
+    #does it return the correct vendor
+    expect(market.prefered_vendor.revenue).must_equal(79714)
+  end
+
 end
