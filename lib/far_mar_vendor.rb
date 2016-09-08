@@ -37,9 +37,9 @@ class FarMar::Vendor
   def self.find(id)
     @vendors.each do |vendor|
       if vendor.id == id
-        return vendor
+        end
       end
-    end
+    return vendor
   end
 #market: returns the FarMar::Market instance that is associated with this vendor using the FarMar::Vendor market_id field
 def market
@@ -85,9 +85,23 @@ end#of method
       end
     return revenue_amount
   end
+
+#self.by_market(market_id): returns all of the vendors with the given market_id
+  def self.by_market(market_id)
+    vendors_with_this_market_id = []
+      @vendors.each do |vendor|
+      if vendor.market_id == market_id
+        vendors_with_this_market_id << vendor
+      end
+    end
+    return vendors_with_this_market_id
+  end
+
 end
 
- vendor = FarMar::Vendor.new({:id => 2655, :name =>"Glover-Hills",:num_employees => 11,:market_id => 493 })
+#vendor = FarMar::Vendor.new({:id => 2655, :name =>"Glover-Hills",:num_employees => 11,:market_id => 493 })
 # ap vendor
 #ap vendor.products
-ap vendor.revenue
+#ap vendor.revenue
+FarMar::Vendor.all
+ap FarMar::Vendor.by_market(493)
