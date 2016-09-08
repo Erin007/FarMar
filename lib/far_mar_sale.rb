@@ -69,8 +69,30 @@ class FarMar::Sale
   end#of method
 
 #self.between(beginning_time, end_time): returns a collection of FarMar::Sale objects where the purchase time is between the two times given as arguments
+  def self.between(beginning_time, end_time)
+    sales_in_time_window = []
+    sales = FarMar::Sale.all
+    sales.each do |sale|
+      if sale.purchase_time > beginning_time && sale.purchase_time < end_time
+        sales_in_time_window << sale
+        end
+      end
+      return sales_in_time_window
+  end
+
+  def self.purchase_times
+    self.all
+    purchase_times = []
+    @sales.each do |sale|
+      purchase_times << sale.purchase_time
+      end
+    return purchase_times.sort
+  end
+
+#<FarMar::Sale:0x007fc4bb4b4da8 @id=12, @amount=5179, @purchase_time="2013-11-08 16:36:03 -0800", @vendor_id=3, @product_id=4>
 
 end
 
-FarMar::Sale.all
-ap FarMar::Sale.find(12)
+# ap FarMar::Sale.purchase_times
+
+# ap FarMar::Sale.between("2013-11-13 05:05:00 -0800", "2013-11-13 05:10:45 -0800")

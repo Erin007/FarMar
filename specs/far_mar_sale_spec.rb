@@ -44,5 +44,13 @@ describe "Testing FarMar Sale" do
     expect(sale.product.id).must_equal(sale.product_id)
     expect(sale.product.id).must_equal(4)
   end
-  
+
+  it ".between finds all of the sales that occured in given time window and returns them in an array" do
+  expect(FarMar::Sale.between("2013-11-13 05:05:00 -0800", "2013-11-13 05:10:00 -0800").class).must_equal(Array)
+  expect(FarMar::Sale.between("2013-11-13 05:05:00 -0800", "2013-11-13 05:10:00 -0800").sample.class).must_equal(FarMar::Sale)
+  expect(FarMar::Sale.between("2013-11-13 05:05:00 -0800", "2013-11-13 05:10:00 -0800").length).must_equal(3) #There are 3 sales between 5:05 and 5:10 on Nov. 13, 2013
+  expect(FarMar::Sale.between("2013-11-13 05:05:00 -0800", "2013-11-13 05:10:00 -0800").sample.purchase_time >"2013-11-13 05:05:00 -0800").must_equal(true)
+  expect(FarMar::Sale.between("2013-11-13 05:05:00 -0800", "2013-11-13 05:10:00 -0800").sample.purchase_time <"2013-11-13 05:10:00 -0800").must_equal(true)
+  end 
+
 end
