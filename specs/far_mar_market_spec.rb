@@ -72,4 +72,10 @@ describe "Testing FarMar Market" do
     expect(market.prefered_vendor.revenue).must_equal(79714)
   end
 
+  it ".worst_vendor returns the vendor with the lowest revenue at this market" do
+    #does it return a vendor?
+    expect(market.worst_vendor.class).must_equal(FarMar::Vendor)
+    #does it return the correct vendor
+    expect(market.worst_vendor.revenue).must_equal(40902)
+  end
 end
