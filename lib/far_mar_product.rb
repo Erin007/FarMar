@@ -1,7 +1,7 @@
 # require_relative "../FarMar"
 # require_relative "far_mar_market"
 # require_relative "far_mar_sale"
-# require_relative "far_mar_vendor"
+require_relative "far_mar_vendor"
 
 class FarMar::Product
 
@@ -38,4 +38,27 @@ class FarMar::Product
     end
   end
 
-end
+#vendor: returns the FarMar::Vendor instance that is associated with this vendor using the FarMar::Product vendor_id field
+  def vendor
+    vendor_that_sells_this_product = nil
+    vendors = FarMar::Vendor.all
+    vendors.each do |vendor|
+      if vendor.id == self.vendor_id
+        vendor_that_sells_this_product = vendor
+        return vendor_that_sells_this_product
+      end#of if
+      end#of do
+  end#of method
+
+#sales: returns a collection of FarMar::Sale instances that are associated using the FarMar::Sale product_id field.
+
+#number_of_sales: returns the number of times this product has been sold.
+
+#self.by_vendor(vendor_id): returns all of the products with the given vendor_id
+
+end#of class
+
+
+
+#[7961] #<FarMar::Product:0x007f8d5c164360 @id=7962, @name="Kickin' Carrots", @vendor_id=2612>,
+#[7962] #<FarMar::Product:0x007f8d5c164310 @id=7963, @name="Good Mushrooms", @vendor_id=2612>,

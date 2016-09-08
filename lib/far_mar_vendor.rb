@@ -103,5 +103,5 @@ end
 # ap vendor
 #ap vendor.products
 #ap vendor.revenue
-FarMar::Vendor.all
-ap FarMar::Vendor.by_market(493)
+# FarMar::Vendor.all
+# ap FarMar::Vendor.by_market(493)
