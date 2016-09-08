@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-09-08T13:52:11-07:00">2016-09-08T13:52:11-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-09-08T13:58:26-07:00">2016-09-08T13:58:26-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         6876.71
+         7087.55
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>8</b> files in total.
-    <b>247</b> relevant lines. 
-    <span class="green"><b>247</b> lines covered</span> and
+    <b>257</b> relevant lines. 
+    <span class="green"><b>257</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -77,17 +77,17 @@
         <td>44</td>
         <td>44</td>
         <td>0</td>
-        <td>8278.8</td>
+        <td>11072.3</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#4d2ea372312d9ac2cb003433679e63252ba0ba33" class="src_link" title="lib/far_mar_sale.rb">lib/far_mar_sale.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>66</td>
-        <td>32</td>
-        <td>32</td>
+        <td>76</td>
+        <td>39</td>
+        <td>39</td>
         <td>0</td>
-        <td>33599.8</td>
+        <td>27569.9</td>
       </tr>
       
       <tr>
@@ -113,11 +113,11 @@
       <tr>
         <td class="strong"><a href="#6d2db5c295fcff5d7fbb5dc39128ee8f784d2ae4" class="src_link" title="specs/far_mar_sale_spec.rb">specs/far_mar_sale_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>45</td>
-        <td>19</td>
-        <td>19</td>
+        <td>48</td>
+        <td>22</td>
+        <td>22</td>
         <td>0</td>
-        <td>1.1</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
@@ -796,20 +796,20 @@
           <code class="ruby">  def initialize(product_hash)</code>
         </li>
       
-        <li class="covered" data-hits="49162" data-linenumber="11">
-          <span class="hits">49162</span>
+        <li class="covered" data-hits="73741" data-linenumber="11">
+          <span class="hits">73741</span>
           
           <code class="ruby">    @id = product_hash[:id]</code>
         </li>
       
-        <li class="covered" data-hits="49162" data-linenumber="12">
-          <span class="hits">49162</span>
+        <li class="covered" data-hits="73741" data-linenumber="12">
+          <span class="hits">73741</span>
           
           <code class="ruby">    @name = product_hash[:name]</code>
         </li>
       
-        <li class="covered" data-hits="49162" data-linenumber="13">
-          <span class="hits">49162</span>
+        <li class="covered" data-hits="73741" data-linenumber="13">
+          <span class="hits">73741</span>
           
           <code class="ruby">    @vendor_id = product_hash[:vendor_id]</code>
         </li>
@@ -832,26 +832,26 @@
           <code class="ruby">  def self.create_products_from_csv</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="17">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="9" data-linenumber="17">
+          <span class="hits">9</span>
           
           <code class="ruby">    product_hash = {}</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="18">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="9" data-linenumber="18">
+          <span class="hits">9</span>
           
           <code class="ruby">    @products = []</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="19">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="9" data-linenumber="19">
+          <span class="hits">9</span>
           
           <code class="ruby">    CSV.read(&quot;/Users/erinbond/desktop/ada/week_5/FarMar/support/products.csv&quot;, &#39;r&#39;).each do |row|</code>
         </li>
       
-        <li class="covered" data-hits="49158" data-linenumber="20">
-          <span class="hits">49158</span>
+        <li class="covered" data-hits="73737" data-linenumber="20">
+          <span class="hits">73737</span>
           
           <code class="ruby">      product_hash = {:id =&gt;row[0].to_i,</code>
         </li>
@@ -868,8 +868,8 @@
           <code class="ruby">                    :vendor_id =&gt;row[2].to_i}</code>
         </li>
       
-        <li class="covered" data-hits="49158" data-linenumber="23">
-          <span class="hits">49158</span>
+        <li class="covered" data-hits="73737" data-linenumber="23">
+          <span class="hits">73737</span>
           
           <code class="ruby">      @products &lt;&lt; FarMar::Product.new(product_hash)</code>
         </li>
@@ -880,8 +880,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="25">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="9" data-linenumber="25">
+          <span class="hits">9</span>
           
           <code class="ruby">    return @products</code>
         </li>
@@ -904,14 +904,14 @@
           <code class="ruby">  def self.all</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="29">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="9" data-linenumber="29">
+          <span class="hits">9</span>
           
           <code class="ruby">    self.create_products_from_csv</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="30">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="9" data-linenumber="30">
+          <span class="hits">9</span>
           
           <code class="ruby">    return @products</code>
         </li>
@@ -1285,8 +1285,8 @@
     <h3>lib/far_mar_sale.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>32</b> relevant lines. 
-      <span class="green"><b>32</b> lines covered</span> and
+      <b>39</b> relevant lines. 
+      <span class="green"><b>39</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1354,32 +1354,32 @@
           <code class="ruby">  def initialize(sale_hash)</code>
         </li>
       
-        <li class="covered" data-hits="153578" data-linenumber="11">
-          <span class="hits">153578</span>
+        <li class="covered" data-hits="153579" data-linenumber="11">
+          <span class="hits">153579</span>
           
           <code class="ruby">    @id = sale_hash[:id]</code>
         </li>
       
-        <li class="covered" data-hits="153578" data-linenumber="12">
-          <span class="hits">153578</span>
+        <li class="covered" data-hits="153579" data-linenumber="12">
+          <span class="hits">153579</span>
           
           <code class="ruby">    @amount = sale_hash[:amount]</code>
         </li>
       
-        <li class="covered" data-hits="153578" data-linenumber="13">
-          <span class="hits">153578</span>
+        <li class="covered" data-hits="153579" data-linenumber="13">
+          <span class="hits">153579</span>
           
           <code class="ruby">    @purchase_time = sale_hash[:purchase_time]</code>
         </li>
       
-        <li class="covered" data-hits="153578" data-linenumber="14">
-          <span class="hits">153578</span>
+        <li class="covered" data-hits="153579" data-linenumber="14">
+          <span class="hits">153579</span>
           
           <code class="ruby">    @vendor_id = sale_hash[:vendor_id]</code>
         </li>
       
-        <li class="covered" data-hits="153578" data-linenumber="15">
-          <span class="hits">153578</span>
+        <li class="covered" data-hits="153579" data-linenumber="15">
+          <span class="hits">153579</span>
           
           <code class="ruby">    @product_id = sale_hash[:product_id]</code>
         </li>
@@ -1648,43 +1648,103 @@
           <code class="ruby">#product: returns the FarMar::Product instance that is associated with this sale using the FarMar::Sale product_id field</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def product</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="61">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    product_sold = nil</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="62">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    products = FarMar::Product.all</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="63">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    products.each do |product|</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="64">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      if product.id == self.product_id</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="65">
+          <span class="hits">3</span>
+          
+          <code class="ruby">        product_sold = product</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="66">
+          <span class="hits">3</span>
+          
+          <code class="ruby">        return product_sold</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">      end#of if</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">      end#of do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">  end#of method</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">#self.between(beginning_time, end_time): returns a collection of FarMar::Sale objects where the purchase time is between the two times given as arguments</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="65">
+        <li class="covered" data-hits="1" data-linenumber="75">
           <span class="hits">1</span>
           
           <code class="ruby">FarMar::Sale.all</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
+        <li class="covered" data-hits="1" data-linenumber="76">
           <span class="hits">1</span>
           
           <code class="ruby">ap FarMar::Sale.find(12)</code>
@@ -2755,8 +2815,8 @@
     <h3>specs/far_mar_sale_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>19</b> relevant lines. 
-      <span class="green"><b>19</b> lines covered</span> and
+      <b>22</b> relevant lines. 
+      <span class="green"><b>22</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2800,8 +2860,8 @@
           <code class="ruby">#&lt;FarMar::Sale:0x007fc4bb4b4da8 @id=12, @amount=5179, @purchase_time=&quot;2013-11-08 16:36:03 -0800&quot;, @vendor_id=3, @product_id=4&gt;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="7">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="7">
+          <span class="hits">4</span>
           
           <code class="ruby">  let(:sale) { FarMar::Sale.new({</code>
         </li>
@@ -2863,55 +2923,55 @@
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">    sale = FarMar::Sale.new({:id =&gt; 90909968,</code>
+          <code class="ruby">    expect(sale.class.must_equal(FarMar::Sale))</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">                  :amount =&gt; 52,</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">                  :purchase_time =&gt; 8,</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">                  :vendor_id =&gt; 87987567535,</code>
+          <code class="ruby">  it &quot;Confirm that create_sales_from_csv reads in each line of the csv file shovels new objects with hash parameters into an array&quot; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">                  :product_id =&gt; 867465768})</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(sale.class.must_equal(FarMar::Sale))</code>
+          <code class="ruby">    expect(sales.length &gt; 0).must_equal(true)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(sales.class).must_equal(Array)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(sales[0].class).must_equal(FarMar::Sale)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="25">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &quot;Confirm that create_sales_from_csv reads in each line of the csv file shovels new objects with hash parameters into an array&quot; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
@@ -2923,19 +2983,19 @@
         <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(sales.length &gt; 0).must_equal(true)</code>
+          <code class="ruby">  it &quot;Returns the object associated with a given id using find&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(sales.class).must_equal(Array)</code>
+          <code class="ruby">    expect(FarMar::Sale.find(12).class).must_equal(FarMar::Sale)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(sales[0].class).must_equal(FarMar::Sale)</code>
+          <code class="ruby">    expect(FarMar::Sale.find(12).amount).must_equal(5179)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
@@ -2953,82 +3013,100 @@
         <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &quot;Returns the object associated with a given id using find&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="33">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(FarMar::Sale.find(12).class).must_equal(FarMar::Sale)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="34">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(FarMar::Sale.find(12).amount).must_equal(5179)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="37">
-          <span class="hits">1</span>
-          
           <code class="ruby">  it &quot;.vendor returns the vendor object for the vendor that made this sale&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">    #is it returning a vendor?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="39">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(sale.vendor.class).must_equal(FarMar::Vendor)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">    #is it returning the correct vendor?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="41">
+        <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(sale.vendor.id).must_equal(sale.vendor_id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(sale.vendor.id).must_equal(3)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;.product returns the product object for the product sold during this sale&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">    #is it returning a product?</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(sale.product.class).must_equal(FarMar::Product)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">    #is it returning the correct product?</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(sale.product.id).must_equal(sale.product_id)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(sale.product.id).must_equal(4)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">end</code>

@@ -14,11 +14,6 @@ describe "Testing FarMar Sale" do
   let(:sales) { FarMar::Sale.all }
 
   it "Confirm that new Sale objects can be created" do
-    sale = FarMar::Sale.new({:id => 90909968,
-                  :amount => 52,
-                  :purchase_time => 8,
-                  :vendor_id => 87987567535,
-                  :product_id => 867465768})
     expect(sale.class.must_equal(FarMar::Sale))
   end
 
@@ -42,4 +37,12 @@ describe "Testing FarMar Sale" do
     expect(sale.vendor.id).must_equal(3)
   end
 
+  it ".product returns the product object for the product sold during this sale" do
+    #is it returning a product?
+    expect(sale.product.class).must_equal(FarMar::Product)
+    #is it returning the correct product?
+    expect(sale.product.id).must_equal(sale.product_id)
+    expect(sale.product.id).must_equal(4)
+  end
+  
 end

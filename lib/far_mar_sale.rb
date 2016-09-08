@@ -57,6 +57,16 @@ class FarMar::Sale
   end#of method
 
 #product: returns the FarMar::Product instance that is associated with this sale using the FarMar::Sale product_id field
+  def product
+    product_sold = nil
+    products = FarMar::Product.all
+    products.each do |product|
+      if product.id == self.product_id
+        product_sold = product
+        return product_sold
+      end#of if
+      end#of do
+  end#of method
 
 #self.between(beginning_time, end_time): returns a collection of FarMar::Sale objects where the purchase time is between the two times given as arguments
 
