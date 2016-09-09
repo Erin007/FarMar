@@ -71,6 +71,26 @@ class FarMar::Market
   end
 
 #self.search(search_term) returns a collection of FarMar::Market instances where the market name or vendor name contain the search_term. For example FarMar::Market.search('school') would return 3 results, one being the market with id 75 (Fox School Farmers FarMar::Market).
+  def self.search(search_term)
+    results_matching_search = []
+    @markets.each do |market|
+      if market.name.downcase.include? search_term
+        results_matching_search << market
+        ap market.name
+      end
+    end
+
+    @markets.each do |market|
+      market.vendors.each do |vendor|
+        if vendor.name.downcase.include? search_term
+          results_matching_search << market
+          ap vendor.name
+        end
+      end
+    end
+
+    return results_matching_search.uniq
+  end
 
 #prefered_vendor: returns the vendor with the highest revenue
   def prefered_vendor_overall
@@ -121,7 +141,8 @@ class FarMar::Market
 
 end#of class
 
-
+FarMar::Market.all
+ap FarMar::Market.search("king")
 # FarMar::Market.all
 # ap FarMar::Market.find(67)
 
