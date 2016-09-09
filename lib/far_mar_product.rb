@@ -78,16 +78,4 @@ class FarMar::Product
     end
     return products_with_this_vendor_id
   end
-
-#self.most_revenue(n) returns the top n product instances ranked by total revenue
-
-
 end#of class
-
-# FarMar::Product.all
-# ap FarMar::Product.by_vendor(2612)
-
-
-
-#[7961] #<FarMar::Product:0x007f8d5c164360 @id=7962, @name="Kickin' Carrots", @vendor_id=2612>,
-#[7962] #<FarMar::Product:0x007f8d5c164310 @id=7963, @name="Good Mushrooms", @vendor_id=2612>,

@@ -18,7 +18,8 @@ class FarMar::Sale
   def self.create_sales_from_csv
     sale_hash = {}
     @sales = []
-    CSV.read("/Users/erinbond/desktop/ada/week_5/FarMar/support/sales.csv", 'r').each do |row|
+    IO.foreach("/Users/erinbond/desktop/ada/week_5/FarMar/support/sales.csv") do |row|
+      row = row.split(",")
       sale_hash = {:id => row[0].to_i,
                     :amount => row[1].to_i,
                     :purchase_time => row[2],
@@ -89,11 +90,4 @@ class FarMar::Sale
   #     end
   #   return purchase_times.sort
   # end
-
-#<FarMar::Sale:0x007fc4bb4b4da8 @id=12, @amount=5179, @purchase_time="2013-11-08 16:36:03 -0800", @vendor_id=3, @product_id=4>
-
-end
-
-# ap FarMar::Sale.purchase_times
-
-# ap FarMar::Sale.between("2013-11-13 05:05:00 -0800", "2013-11-13 05:10:45 -0800")
+end#of class

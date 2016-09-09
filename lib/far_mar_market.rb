@@ -138,23 +138,4 @@ class FarMar::Market
           end
     return FarMar::Vendor.find(vendor_daily_revenue.key(vendor_daily_revenue.values.min))
   end
-
 end#of class
-
-# FarMar::Market.all
-# ap FarMar::Market.search("school")
-# FarMar::Market.all
-# ap FarMar::Market.find(67)
-
- market = FarMar::Market.new({
-       :id => 493,
-     :name => "Woodstock Farmers Market",
-  :address => "1102 McConnell Road",
-     :city => "woodstock",
-   :county => "McHenry",
-    :state => "Illinois",
-      :zip => "60098"
-})
-
-# ap  market.prefered_vendor("2013-11-13")
-# ap market.worst_vendor("2013-11-13")

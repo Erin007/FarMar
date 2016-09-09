@@ -24,7 +24,6 @@ describe "Testing FarMar Vendor" do
   end
 
   it "Confirm that create_vendors_from_csv reads in each line of the csv file, stores that information in a hash, makes a new object with the hash as a parameter and shovels that object into an array" do
-
     expect(vendors.length > 0).must_equal(true)
     expect(vendors.class).must_equal(Array)
     expect(vendors[0].class).must_equal(FarMar::Vendor)
@@ -38,7 +37,7 @@ describe "Testing FarMar Vendor" do
   end
 
   it ".market returns the market where that vendor sells their goods" do
-#<FarMar::Vendor:0x007ffd1103e7b8 @id=2655, @name="Glover-Hills", @num_employees=11, @market_id=493>,
+    #<FarMar::Vendor:0x007ffd1103e7b8 @id=2655, @name="Glover-Hills", @num_employees=11, @market_id=493>,
     expect(vendor.market.id).must_equal(493)
   end
 
@@ -64,4 +63,11 @@ describe "Testing FarMar Vendor" do
     #expect(FarMar::Vendor.by_market(493)).must_equal(market.vendors)
   end
 
+  # it  "self.most_revenue(n) returns the top n vendor instances ranked by total revenue" do
+  #   vendors
+  #   expect(FarMar::Vendor.most_revenue(3).class).must_equal(Array)
+  #   expect(FarMar::Vendor.most_revenue(3).length).must_equal(2)
+  #   expect(FarMar::Vendor.most_revenue(3).sample.class).must_equal(FarMar::Vendor)
+  #   expect(FarMar::Vendor.most_revenue(1).id).must_equal(2590)
+  # end
 end

@@ -43,40 +43,40 @@ class FarMar::Vendor
       end
   end
 #market: returns the FarMar::Market instance that is associated with this vendor using the FarMar::Vendor market_id field
-def market
-  market_where_this_vendor_sells = nil
-  markets_to_check = FarMar::Market.all
-  markets_to_check.each do |market_to_check|
-    if self.market_id == market_to_check.id
-      market_where_this_vendor_sells = market_to_check
-      end#of if
-    end#of do
-  return market_where_this_vendor_sells
-end#of method
+  def market
+    market_where_this_vendor_sells = nil
+    markets_to_check = FarMar::Market.all
+    markets_to_check.each do |market_to_check|
+      if self.market_id == market_to_check.id
+        market_where_this_vendor_sells = market_to_check
+        end#of if
+      end#of do
+    return market_where_this_vendor_sells
+  end#of method
 
 #products: returns a collection of FarMar::Product instances that are associated by the FarMar::Product vendor_id field.
-def products
-  products_this_vendor_sells = []
-  products_to_check = FarMar::Product.all
-  products_to_check.each do |product_to_check|
-    if self.id == product_to_check.vendor_id
-        products_this_vendor_sells << product_to_check
-      end#of if
-    end#of do
-  return products_this_vendor_sells
-end#of method
+  def products
+    products_this_vendor_sells = []
+    products_to_check = FarMar::Product.all
+    products_to_check.each do |product_to_check|
+      if self.id == product_to_check.vendor_id
+          products_this_vendor_sells << product_to_check
+        end#of if
+      end#of do
+    return products_this_vendor_sells
+  end#of method
 
 #sales: returns a collection of FarMar::Sale instances that are associated by the vendor_id field.
-def sales
-  sales_this_vendor_made = []
-  sales_to_check = FarMar::Sale.all
-  sales_to_check.each do |sale_to_check|
-    if self.id == sale_to_check.vendor_id
-        sales_this_vendor_made << sale_to_check
-      end#of if
-    end#of do
-  return sales_this_vendor_made
-end#of method
+  def sales
+    sales_this_vendor_made = []
+    sales_to_check = FarMar::Sale.all
+    sales_to_check.each do |sale_to_check|
+      if self.id == sale_to_check.vendor_id
+          sales_this_vendor_made << sale_to_check
+        end#of if
+      end#of do
+    return sales_this_vendor_made
+  end#of method
 
 #revenue: returns the the sum of all of the vendor's sales (in cents)
   def revenue
@@ -98,12 +98,52 @@ end#of method
     return vendors_with_this_market_id
   end
 
-end
+# self.most_revenue(n) returns the top n vendor instances ranked by total revenue
+  def self.most_revenue(n)
+    revenues = [0]
+    vendors_with_highest_revenues =[]
 
-# ap FarMar::Vendor.all
-#vendor = FarMar::Vendor.new({:id => 2655, :name =>"Glover-Hills",:num_employees => 11,:market_id => 493 })
-# ap vendor
-#ap vendor.products
-#ap vendor.revenue
-# FarMar::Vendor.all
-# ap FarMar::Vendor.by_market(493)
+    @vendors.each do |vendor|
+      if revenues.length == n
+        if vendor.revenue > revenues.min
+        revenues.delete_at(revenues.index(revenues.min))
+        revenues << vendor.revenue
+        end
+      else
+        revenues << vendor.revenue
+      end
+    end
+
+    @vendors.each do |vendor|
+      if revenues.sort.include?(vendor.revenue)
+        vendors_with_highest_revenues << vendor
+      end
+    end
+    return vendors_with_highest_revenues
+  end
+
+# self.most_items(n) returns the top n vendor instances ranked by total number of items sold
+def self.most_items(n)
+  sales_counts = [0]
+  vendors_who_sold_most_items =[]
+
+      @vendors.each do |vendor|
+        if sales_counts.length == n
+          if vendor.sales.length > sales_counts.min
+          sales_counts.delete_at(sales_counts.index(sales_counts.min))
+          sales_counts << vendor.sales.length
+          end
+        else
+          sales_counts << vendor.sales.length
+        end
+      end
+
+      @vendors.each do |vendor|
+        sales_counts.sort!
+        if sales_counts.include?(vendor.sales.length)
+          vendors_who_sold_most_items << vendor
+        end
+      end
+      return vendors_who_sold_most_items
+    end
+end#of class

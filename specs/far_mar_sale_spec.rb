@@ -52,5 +52,4 @@ describe "Testing FarMar Sale" do
   expect(FarMar::Sale.between("2013-11-13 05:05:00 -0800", "2013-11-13 05:10:00 -0800").sample.purchase_time >"2013-11-13 05:05:00 -0800").must_equal(true)
   expect(FarMar::Sale.between("2013-11-13 05:05:00 -0800", "2013-11-13 05:10:00 -0800").sample.purchase_time <"2013-11-13 05:10:00 -0800").must_equal(true)
   end 
-
 end
