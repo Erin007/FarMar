@@ -63,11 +63,18 @@ describe "Testing FarMar Vendor" do
     #expect(FarMar::Vendor.by_market(493)).must_equal(market.vendors)
   end
 
-  # it  "self.most_revenue(n) returns the top n vendor instances ranked by total revenue" do
-  #   vendors
-  #   expect(FarMar::Vendor.most_revenue(3).class).must_equal(Array)
-  #   expect(FarMar::Vendor.most_revenue(3).length).must_equal(2)
-  #   expect(FarMar::Vendor.most_revenue(3).sample.class).must_equal(FarMar::Vendor)
-  #   expect(FarMar::Vendor.most_revenue(1).id).must_equal(2590)
-  # end
+  it  "self.most_revenue(n) returns the top n vendor instances ranked by total revenue" do
+    vendors
+    expect(FarMar::Vendor.most_revenue(3).class).must_equal(Array)
+    expect(FarMar::Vendor.most_revenue(3).length).must_equal(2)
+    expect(FarMar::Vendor.most_revenue(3).sample.class).must_equal(FarMar::Vendor)
+    expect(FarMar::Vendor.most_revenue(1).id).must_equal(2590)
+  end
+
+  it "self.most_items(n) returns vendors who sold the most items" do
+    vendors
+    expect(FarMar::Vendor.most_items(3).class).must_equal(Array)
+    expect(FarMar::Vendor.most_items(3).length).must_equal(29)
+    expect(FarMar::Vendor.most_items(3).sample.class).must_equal(FarMar::Vendor)
+  end 
 end

@@ -123,27 +123,30 @@ class FarMar::Vendor
   end
 
 # self.most_items(n) returns the top n vendor instances ranked by total number of items sold
-def self.most_items(n)
-  sales_counts = [0]
-  vendors_who_sold_most_items =[]
 
-      @vendors.each do |vendor|
-        if sales_counts.length == n
-          if vendor.sales.length > sales_counts.min
-          sales_counts.delete_at(sales_counts.index(sales_counts.min))
-          sales_counts << vendor.sales.length
+#NOTES: So, it appears as though there is a 29-way tie of vendors who sold the max (18 items). My method will return all of the vendors not just the top n because it doesn't know what to do if the vendors sold the same number of items.
+  def self.most_items(n)
+    sales_counts = [0]
+    vendors_who_sold_most_items =[]
+
+        @vendors.each do |vendor|
+          if sales_counts.length == n
+            if vendor.sales.length > sales_counts.min && vendor.sales.length < sales_counts.max
+            sales_counts.delete_at(sales_counts.index(sales_counts.min))
+            sales_counts << vendor.sales.length
+            end
+          else
+            sales_counts << vendor.sales.length
           end
-        else
-          sales_counts << vendor.sales.length
         end
-      end
 
-      @vendors.each do |vendor|
-        sales_counts.sort!
-        if sales_counts.include?(vendor.sales.length)
-          vendors_who_sold_most_items << vendor
+        @vendors.each do |vendor|
+          sales_counts.sort!
+          if sales_counts.include?(vendor.sales.length)
+            vendors_who_sold_most_items << vendor
+          end
         end
-      end
-      return vendors_who_sold_most_items
-    end
+        return vendors_who_sold_most_items
+  end
+
 end#of class
