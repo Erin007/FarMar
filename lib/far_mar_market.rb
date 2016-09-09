@@ -76,7 +76,7 @@ class FarMar::Market
     @markets.each do |market|
       if market.name.downcase.include? search_term
         results_matching_search << market
-        ap market.name
+        # ap market.name
       end
     end
 
@@ -84,7 +84,7 @@ class FarMar::Market
       market.vendors.each do |vendor|
         if vendor.name.downcase.include? search_term
           results_matching_search << market
-          ap vendor.name
+          # ap vendor.name
         end
       end
     end
@@ -141,8 +141,8 @@ class FarMar::Market
 
 end#of class
 
-FarMar::Market.all
-ap FarMar::Market.search("school")
+# FarMar::Market.all
+# ap FarMar::Market.search("school")
 # FarMar::Market.all
 # ap FarMar::Market.find(67)
 
