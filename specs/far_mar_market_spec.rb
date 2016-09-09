@@ -90,4 +90,17 @@ describe "Testing FarMar Market" do
     expect(market.worst_vendor("2013-11-13").id).must_equal(1025)
     #<FarMar::Vendor:0x007f9ed930d048 @id=1025, @name="Effertz-Howell", @num_employees=9, @market_id=188>
   end
+
+  it "self.search(search_term) returns a collection of markets where the market name or vendor name contain the search_term." do
+    markets
+    expect(FarMar::Market.search("school").class).must_equal(Array)
+    expect(FarMar::Market.search("school").sample.class).must_equal(FarMar::Market)
+    expect(FarMar::Market.search("school").length).must_equal(3)
+    expect(FarMar::Market.search("school").sample.name.downcase.include? "school").must_equal(true)
+    #There aren't any vendor names that include school, so I had to check another search_term
+    expect(FarMar::Market.search("king").sample.name.downcase.include? "king").must_equal(true)
+    expect(FarMar::Market.search("king").length).must_equal(15)
+      # MARKETS: "King City Certified Farmers Market", "King George Farmers' Market"
+      # "King Farmers Market" "Kingwood Farmers Market"
+      #VENDORS: "Hyatt-King", "Kulas, King and Kohler", "King Group", "Morar, Armstrong and King","King, Murray and Willms", "Wolff, King and Goldner", "King, Rohan and Bode", "Morissette, King and Raynor", "Haley, King and Thiel", "King, Wilkinson and Strosin", "Huel, Swift and King", "King, Kessler and Zboncak"
 end

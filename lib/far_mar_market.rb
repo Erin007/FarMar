@@ -142,7 +142,7 @@ class FarMar::Market
 end#of class
 
 FarMar::Market.all
-ap FarMar::Market.search("king")
+ap FarMar::Market.search("school")
 # FarMar::Market.all
 # ap FarMar::Market.find(67)
 
