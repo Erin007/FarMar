@@ -65,17 +65,29 @@ describe "Testing FarMar Market" do
   # [7] #<FarMar::Product:0x007ffdd8b2f948 @id=8092, @name="Salty Apples", @vendor_id=2658>
   end
 
-  it ".prefered_vendor returns the vendor with the highest revenue at this market" do
+  it ".prefered_vendor_overall returns the vendor with the highest revenue at this market" do
     #does it return a vendor?
-    expect(market.prefered_vendor.class).must_equal(FarMar::Vendor)
+    expect(market.prefered_vendor_overall.class).must_equal(FarMar::Vendor)
     #does it return the correct vendor
-    expect(market.prefered_vendor.revenue).must_equal(79714)
+    expect(market.prefered_vendor_overall.revenue).must_equal(79714)
   end
 
-  it ".worst_vendor returns the vendor with the lowest revenue at this market" do
+  it ".worst_vendor_overall returns the vendor with the lowest revenue at this market" do
     #does it return a vendor?
-    expect(market.worst_vendor.class).must_equal(FarMar::Vendor)
+    expect(market.worst_vendor_overall.class).must_equal(FarMar::Vendor)
     #does it return the correct vendor
-    expect(market.worst_vendor.revenue).must_equal(40902)
+    expect(market.worst_vendor_overall.revenue).must_equal(40902)
+  end
+
+  it ".prefered_vendor(date) returns the vendor with the highest revenue for a given date" do
+    expect(market.prefered_vendor("2013-11-13").class).must_equal(FarMar::Vendor)
+    expect(market.prefered_vendor("2013-11-13").id).must_equal(2631)
+    #<FarMar::Vendor:0x007f9eda0ae008 @id=2631, @name="Reichel LLC", @num_employees=4, @market_id=488>
+  end
+
+  it ".worst_vendor(date) returns the vendor with the highest revenue for a given date" do
+    expect(market.worst_vendor("2013-11-13").class).must_equal(FarMar::Vendor)
+    expect(market.worst_vendor("2013-11-13").id).must_equal(1025)
+    #<FarMar::Vendor:0x007f9ed930d048 @id=1025, @name="Effertz-Howell", @num_employees=9, @market_id=188>
   end
 end
