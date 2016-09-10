@@ -85,7 +85,7 @@ describe "Testing FarMar Market" do
     #<FarMar::Vendor:0x007f9eda0ae008 @id=2631, @name="Reichel LLC", @num_employees=4, @market_id=488>
   end
 
-  it ".worst_vendor(date) returns the vendor with the highest revenue for a given date" do
+  it ".worst_vendor(date) returns the vendor with the lowest revenue for a given date" do
     expect(market.worst_vendor("2013-11-13").class).must_equal(FarMar::Vendor)
     expect(market.worst_vendor("2013-11-13").id).must_equal(1025)
     #<FarMar::Vendor:0x007f9ed930d048 @id=1025, @name="Effertz-Howell", @num_employees=9, @market_id=188>

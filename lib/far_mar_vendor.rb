@@ -112,19 +112,21 @@ class FarMar::Vendor
       else
         revenues << vendor.revenue
       end
+    print "."
     end
 
     @vendors.each do |vendor|
-      if revenues.sort.include?(vendor.revenue)
-        vendors_with_highest_revenues << vendor
-      end
+        if revenues.sort.include?(vendor.revenue)
+          vendors_with_highest_revenues << vendor
+        end
+    print "?"
     end
     return vendors_with_highest_revenues
   end
 
 # self.most_items(n) returns the top n vendor instances ranked by total number of items sold
 
-#NOTES: So, it appears as though there is a 29-way tie of vendors who sold the max (18 items). My method will return all of the vendors not just the top n because it doesn't know what to do if the vendors sold the same number of items.
+#NOTES: So, it appears as though there is a 29-way tie of vendors who sold the max (18 items). My method will return the first n vendors because it doesn't know what to do if the vendors sold the same number of items. I asked the program to only give me n instances with an until loop, but there could be more vendors who also sold that number of items
   def self.most_items(n)
     sales_counts = [0]
     vendors_who_sold_most_items =[]
@@ -138,12 +140,16 @@ class FarMar::Vendor
           else
             sales_counts << vendor.sales.length
           end
+          print "!"
         end
 
         @vendors.each do |vendor|
           sales_counts.sort!
-          if sales_counts.include?(vendor.sales.length)
-            vendors_who_sold_most_items << vendor
+          until vendors_who_sold_most_items.length == n
+            if sales_counts.include?(vendor.sales.length)
+              vendors_who_sold_most_items << vendor
+            end
+        print "@"
           end
         end
         return vendors_who_sold_most_items
